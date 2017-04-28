@@ -1,4 +1,0 @@
-#Fri Apr 28 14:30:04 PDT 2017
-base.0=/Users/christianaushana/StudioProjects/spring2017-project-cdushana/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4
-renamed.0=classes.dex
-file.0=/Users/christianaushana/StudioProjects/spring2017-project-cdushana/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex
