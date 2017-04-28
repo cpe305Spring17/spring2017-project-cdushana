@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/christianaushana/StudioProjects/spring2017-project-cdushana/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/christianaushana/StudioProjects/spring2017-project-cdushana/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8d78e25f3d1d3152cb8af0d1d620e175e207bc2b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christianaushana/StudioProjects/spring2017-project-cdushana/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a500883af9203a1d83ad2e48fe066b7201b973e6">
+        <dex dex="/Users/christianaushana/StudioProjects/spring2017-project-cdushana/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_be8434273fdfb41dffe29e2c582fa3f2a41eb512/classes.dex" />
+    </item>
+
+</items>
