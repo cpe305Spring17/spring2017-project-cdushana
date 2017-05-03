@@ -5,4 +5,8 @@ package com.telos.christianaushana.telos;
  */
 
 public class Reminder {
+
+    public Reminder() {
+
+    }
 }

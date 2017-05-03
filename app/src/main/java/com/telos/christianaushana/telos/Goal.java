@@ -1,7 +1,5 @@
 package com.telos.christianaushana.telos;
 
-import android.provider.CalendarContract;
-
 /**
  * Created by christianaushana on 4/28/17.
  */

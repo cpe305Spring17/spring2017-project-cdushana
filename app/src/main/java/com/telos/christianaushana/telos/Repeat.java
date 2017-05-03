@@ -5,4 +5,7 @@ package com.telos.christianaushana.telos;
  */
 
 public class Repeat {
+    public Repeat() {
+
+    }
 }

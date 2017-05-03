@@ -1,16 +1,11 @@
 package com.telos.christianaushana.telos;
 
 import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 
 public class Settings extends AppCompatActivity {
 
@@ -20,15 +15,6 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.settings_toolbar);
-//        toolbar.setNavigationIcon(R.drawable.ic_action_back);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//            }
-//        });
     }
 
     @Override

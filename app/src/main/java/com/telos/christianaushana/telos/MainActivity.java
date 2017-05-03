@@ -8,8 +8,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,15 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-//    public void showMenu() {
-//        Intent intent = new Intent();
-//
-//        intent.setAction(intent.ACTION_SEND);
-//
-//        intent.setType("text/plain");
-//        startActivity(intent);
-//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
