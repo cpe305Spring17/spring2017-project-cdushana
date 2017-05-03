@@ -13,11 +13,6 @@ import android.widget.LinearLayout;
  */
 
 public class AddGoal extends AppCompatActivity {
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//    }
-
     public static AlertDialog addGoal(final Activity context/*, final OptionListAdapter adapter*/) {
         LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
