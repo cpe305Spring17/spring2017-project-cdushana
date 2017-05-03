@@ -5,4 +5,5 @@ package com.telos.christianaushana.telos;
  */
 
 public class Goal {
+
 }
