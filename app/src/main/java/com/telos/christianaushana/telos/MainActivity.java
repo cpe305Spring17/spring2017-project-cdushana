@@ -7,8 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
 //                showMenu();
                 startActivity(new Intent(this, Settings.class));
                 return true;
-
+            case R.id.add_action:
+                Log.d(TAG, "add action");
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.menu, menu);
-        inflater.inflate(R.menu.settings_menu, menu);
+        inflater.inflate(R.menu.menu, menu);
         return true;
     }
 }
