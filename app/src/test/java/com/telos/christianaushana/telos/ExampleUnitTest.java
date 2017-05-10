@@ -14,4 +14,18 @@ public class ExampleUnitTest {
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void createGoal() throws Exception {
+        Goal goal = new Goal();
+        goal.setName("Run");
+        goal.setQuestion("Did you run today?");
+        goal.setReminderOption("9AM");
+        goal.setRepeatOption("daily");
+
+        assertEquals(goal.getName(), "Run");
+        assertEquals(goal.getQuestion(), "Did you run today?");
+        assertEquals(goal.getReminderOption(), "9AM");
+        assertEquals(goal.getRepeatOption(), "daily");
+    }
 }
