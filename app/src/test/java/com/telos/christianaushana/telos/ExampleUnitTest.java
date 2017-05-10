@@ -10,22 +10,30 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+    Goal goal = new Goal("Run", "Did you run today?", "daily", "9AM");
+
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
     }
 
     @Test
-    public void createGoal() throws Exception {
-        Goal goal = new Goal();
-        goal.setName("Run");
-        goal.setQuestion("Did you run today?");
-        goal.setReminderOption("9AM");
-        goal.setRepeatOption("daily");
-
+    public void testGoalName() throws Exception {
         assertEquals(goal.getName(), "Run");
+    }
+
+    @Test
+    public void testGoalQuestion() throws Exception {
         assertEquals(goal.getQuestion(), "Did you run today?");
+    }
+
+    @Test
+    public void testGoalReminderOption() throws Exception {
         assertEquals(goal.getReminderOption(), "9AM");
+    }
+
+    @Test
+    public void testGoalRepeatOption() throws Exception {
         assertEquals(goal.getRepeatOption(), "daily");
     }
 }
