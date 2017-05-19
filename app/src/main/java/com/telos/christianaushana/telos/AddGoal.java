@@ -57,6 +57,9 @@ public class AddGoal extends AppCompatActivity {
                         }
                         //your deleting code
                         dialog.dismiss();
+
+                        MainActivity.list.add(goal);
+                        MainActivity.adapter.notifyDataSetChanged();
                     }
 
                 })
