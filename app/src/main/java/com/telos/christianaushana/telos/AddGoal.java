@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -13,6 +14,8 @@ import android.widget.LinearLayout;
  */
 
 public class AddGoal extends AppCompatActivity {
+
+
     public static AlertDialog addGoal(final Activity context/*, final OptionListAdapter adapter*/) {
         LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -47,13 +50,13 @@ public class AddGoal extends AppCompatActivity {
                             goal.setName(nameInput.getText().toString());
                         }
                         if (questionInput.getText().toString().length() > 0) {
-                            goal.setName(questionInput.getText().toString());
+                            goal.setQuestion(questionInput.getText().toString());
                         }
                         if (repeatOption.getText().toString().length() > 0) {
-                            goal.setName(repeatOption.getText().toString());
+                            goal.setRepeatOption(repeatOption.getText().toString());
                         }
                         if (reminderOption.getText().toString().length() > 0) {
-                            goal.setName(reminderOption.getText().toString());
+                            goal.setReminderOption(reminderOption.getText().toString());
                         }
                         //your deleting code
                         dialog.dismiss();

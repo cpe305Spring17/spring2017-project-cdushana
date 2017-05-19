@@ -6,6 +6,8 @@ package com.telos.christianaushana.telos;
 
 import android.content.Context;
 
+import com.google.gson.Gson;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -16,7 +18,7 @@ public class DataManager {
   public static ArrayList<Goal> list = null;
 
   public static class GsonClass {
-    ArrayList<Goal> gList;
+    ArrayList<Goal> gList = new ArrayList<Goal>();
     public GsonClass(ArrayList<Goal> list) {
       gList = list;
     }
@@ -24,30 +26,30 @@ public class DataManager {
 
   }
 
-//  public static void writeDataToFile(Context context) {
-//    GsonClass gsonClassObj = new GsonClass(mList);
-//    Gson gson = new Gson();
-//
-//    String json = gson.toJson(gsonClassObj);
-//    try {
-//      FileWriter fileWriter = new FileWriter(context.getFilesDir() + "/" + "file");
-//      fileWriter.write(json);
-//      fileWriter.flush();
-//      fileWriter.close();
-//    } catch (IOException e) {
-//      e.printStackTrace();
-//    }
-//  }
-//
-//  public static void readDataFromFile(Context context) throws IOException {
-//    GsonClass gsonClassObj = null;
-//    Gson gson = new Gson();
-//
-//    BufferedReader bufferedReader = new BufferedReader(new FileReader(context.getFilesDir() + "/" + "file"));
-//    gsonClassObj = gson.fromJson(bufferedReader, GsonClass.class);
-//
-//    mList = gsonClassObj.gList;
-//
-//    bufferedReader.close();
-//  }
+  public static void writeDataToFile(Context context) {
+    GsonClass gsonClassObj = new GsonClass(list);
+    Gson gson = new Gson();
+
+    String json = gson.toJson(gsonClassObj);
+    try {
+      FileWriter fileWriter = new FileWriter(context.getFilesDir() + "/" + "file");
+      fileWriter.write(json);
+      fileWriter.flush();
+      fileWriter.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void readDataFromFile(Context context) throws IOException {
+    GsonClass gsonClassObj = null;
+    Gson gson = new Gson();
+
+    BufferedReader bufferedReader = new BufferedReader(new FileReader(context.getFilesDir() + "/" + "file"));
+    gsonClassObj = gson.fromJson(bufferedReader, GsonClass.class);
+
+    list = gsonClassObj.gList;
+
+    bufferedReader.close();
+  }
 }

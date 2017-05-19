@@ -38,15 +38,16 @@ public class MainActivity extends AppCompatActivity {
 
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-//        if (mList == null) {
+        list = new ArrayList<Goal>();
+//        if (list == null) {
 //            try {
-//                TodoManager.readDataFromFile(this);
+//                DataManager.readDataFromFile(this);
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
 //        }
 //        list = DataManager.list;
-        list = new ArrayList<Goal>();
+
 
 
 
@@ -137,6 +138,18 @@ public class MainActivity extends AppCompatActivity {
                 .create();
         return myQuittingDialogBox;
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        DataManager.writeDataToFile(this);
     }
 }
 

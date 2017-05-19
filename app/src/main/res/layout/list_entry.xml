@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="horizontal" android:layout_width="match_parent"
-              android:layout_height="wrap_content">
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/mImageView"
-        />
+              android:layout_height="wrap_content"
+              android:weightSum="1">
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:id="@+id/textView"
+        android:layout_width="332dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_vertical"
         android:clickable="true"
-        android:layout_gravity="center_vertical"/>
+        android:text="test"
+        android:textAllCaps="true"
+        android:textSize="25dp"
+        android:visibility="visible"/>
 
     <CheckBox
+        android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox"
-        android:saveEnabled="false"
+        android:layout_gravity="center_vertical"
         android:focusable="false"
-        android:layout_gravity="center_vertical"/>
+        android:saveEnabled="false"/>
 
 </LinearLayout>

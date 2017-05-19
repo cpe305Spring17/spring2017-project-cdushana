@@ -3,12 +3,14 @@ package com.telos.christianaushana.telos;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 /**
  * Created by christianaushana on 5/18/17.
@@ -19,6 +21,7 @@ public class RecycleViewHolder extends RecyclerView.ViewHolder {
   private TextView mTextView;
   public Goal goal;
   private ImageView imageView;
+  String TAG = "RecycleViewHolder";
 
   public RecycleViewHolder(final View itemView) {
     super(itemView);
@@ -50,8 +53,8 @@ public class RecycleViewHolder extends RecyclerView.ViewHolder {
 
   public void bind(final Goal goal) {
     this.goal = goal;
-    mTextView.setText(goal.name);
-
+    mTextView.setText(goal.getName());
+    Log.d(TAG, "bind: " + goal.getName() + " " + goal.getRepeatOption());
 //            int color = itemView.getContext().getResources().getColor(R.color.colorAccent);
 //            itemView.setBackgroundColor(entry.b ? color: 0x00000000);
 
