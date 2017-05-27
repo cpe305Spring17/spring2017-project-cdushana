@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class ExampleUnitTest {
+public class GoalTests {
     Goal goal = new Goal("Run", "Did you run today?", "daily", "9AM");
 
     @Test

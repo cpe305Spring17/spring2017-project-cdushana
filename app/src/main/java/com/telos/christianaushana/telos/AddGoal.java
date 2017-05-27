@@ -8,12 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 /**
  * Created by christianaushana on 5/2/17.
  */
 
 public class AddGoal extends AppCompatActivity {
+    ArrayList<String> repeatOptionList;
+    ArrayList<String> reminderOptionList;
 
 
     public static AlertDialog addGoal(final Activity context/*, final OptionListAdapter adapter*/) {
@@ -32,6 +37,13 @@ public class AddGoal extends AppCompatActivity {
         final EditText repeatOption = new EditText(context);
         repeatOption.setHint("repeat");
         layout.addView(repeatOption);
+//        ArrayList<String> repeatOptionList = new ArrayList<String>();
+//        repeatOptionList.add()
+        final Spinner repeatOptionSpinner = new Spinner(context);
+
+
+
+
 
         // modify later
         final EditText reminderOption = new EditText(context);
@@ -75,4 +87,8 @@ public class AddGoal extends AppCompatActivity {
                 .create();
         return alertDialog;
     }
+
+//    public ArrayList<String> createRepeatOptions() {
+//
+//    }
 }
