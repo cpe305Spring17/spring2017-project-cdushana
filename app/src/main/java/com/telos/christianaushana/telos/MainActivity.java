@@ -1,11 +1,13 @@
 package com.telos.christianaushana.telos;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -13,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     static ArrayList<Goal> list;
     static RecycleAdapter adapter;
     static RecyclerView rv;
+//    public AddGoal addGoal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.add_action:
                 // dialog box will display and provide areas to input data
+//                addGoal = new AddGoal();
                 diaBox = AddGoal.addGoal(MainActivity.this);
                 diaBox.show();
                 return true;
@@ -139,6 +144,25 @@ public class MainActivity extends AppCompatActivity {
         return myQuittingDialogBox;
 
     }
+
+  public void sendNotification(View view) {
+    NotificationCompat.Builder mBuilder =
+            (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                    .setSmallIcon(R.drawable.ic_action_back)
+                    .setContentTitle("My notification")
+                    .setContentText("Hello World!");
+
+    // Gets an instance of the NotificationManager service//
+    NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+    //When you issue multiple notifications about the same type of event, it’s best practice for your app to try to update an existing
+    // notification with this new information, rather than immediately creating a new notification.
+    // If you want to update this notification at a later date, you need to assign it an ID. You can
+    // then use this ID whenever you issue a subsequent notification. If the previous notification is still visible,
+    // the system will update this existing notification, rather than create a new one. In this example, the notification’s ID is 001//
+//    NotificationManager.notify().mNotificationManager.notify(001, mBuilder.build());
+
+  }
 
     @Override
     protected void onResume() {

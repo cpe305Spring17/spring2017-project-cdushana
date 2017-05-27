@@ -5,4 +5,5 @@ package com.telos.christianaushana.telos.notifications;
  */
 
 public interface Notification {
+
 }
