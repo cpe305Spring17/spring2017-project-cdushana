@@ -10,7 +10,7 @@ This application is focused on building customizable goals throughout a personâ€
 
 # Class Diagram
 
-
+https://cloud.githubusercontent.com/assets/14967281/26750698/a0b9617c-47dd-11e7-8d0d-103893070a8d.jpg
 
 # Screenshots
 
