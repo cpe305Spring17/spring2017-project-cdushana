@@ -34,5 +34,5 @@ addons:
   sonarqube:
     organization: "305"
 script:
-   - sonar-scanner
+#   - sonar-scanner
    - ./gradlew clean jacocoTestDebugUnitTestReport sonarqube
