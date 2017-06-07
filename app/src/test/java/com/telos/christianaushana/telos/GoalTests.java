@@ -10,7 +10,9 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class GoalTests {
-    Goal goal = new Goal("Run", "Did you run today?", "daily", "9AM");
+    Reminder reminder = new Reminder(1, "AM");
+    Goal goal = new Goal("Run", "Did you run today?", "daily", reminder);
+
 
     @Test
     public void addition_isCorrect() throws Exception {
@@ -29,7 +31,8 @@ public class GoalTests {
 
     @Test
     public void testGoalReminderOption() throws Exception {
-        assertEquals(goal.getReminderOption(), "9AM");
+        assertEquals(goal.getReminderOption().getTime(), 1);
+        assertEquals(goal.getReminderOption().getMeridiem(), "AM");
     }
 
     @Test
