@@ -26,10 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     public AlertDialog diaBox;
-    static ArrayList<Goal> list;
-    static RecycleAdapter adapter;
-    static RecyclerView rv;
-//    public AddGoal addGoal;
+    public static ArrayList<Goal> list;
+    public static RecycleAdapter adapter;
+    public RecyclerView rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +41,15 @@ public class MainActivity extends AppCompatActivity {
 
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        list = new ArrayList<Goal>();
-//        if (list == null) {
-//            try {
-//                DataManager.readDataFromFile(this);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        list = DataManager.list;
+        if (list == null) {
+            try {
+                DataManager.readDataFromFile(this);
 
-
-
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        list = DataManager.list;
 
         adapter = new RecycleAdapter(list);
         rv.setAdapter(adapter);
@@ -82,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         new ItemTouchHelper(simpleCallback).attachToRecyclerView(rv);
+
     }
 
     @Override
@@ -145,25 +142,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-  public void sendNotification(View view) {
-    NotificationCompat.Builder mBuilder =
-            (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                    .setSmallIcon(R.drawable.ic_action_back)
-                    .setContentTitle("My notification")
-                    .setContentText("Hello World!");
-
-    // Gets an instance of the NotificationManager service//
-    NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-    //When you issue multiple notifications about the same type of event, it’s best practice for your app to try to update an existing
-    // notification with this new information, rather than immediately creating a new notification.
-    // If you want to update this notification at a later date, you need to assign it an ID. You can
-    // then use this ID whenever you issue a subsequent notification. If the previous notification is still visible,
-    // the system will update this existing notification, rather than create a new one. In this example, the notification’s ID is 001//
-//    NotificationManager.notify().mNotificationManager.notify(001, mBuilder.build());
-
-  }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -173,6 +151,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        DataManager.writeDataToFile(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
         DataManager.writeDataToFile(this);
     }
 }

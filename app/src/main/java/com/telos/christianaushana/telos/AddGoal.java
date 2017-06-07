@@ -22,7 +22,7 @@ import java.util.Calendar;
 public class AddGoal extends AppCompatActivity {
     ArrayList<String> repeatOptionList;
     ArrayList<String> reminderOptionList;
-
+  private static final String TAG = "AddGoal";
 
     public static AlertDialog addGoal(final Activity context/*, final OptionListAdapter adapter*/) {
       LinearLayout layout = new LinearLayout(context);

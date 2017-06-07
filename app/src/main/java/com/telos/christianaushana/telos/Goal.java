@@ -12,12 +12,12 @@ public class Goal {
 
     public Goal() {}
 
-    public Goal(String name, String question, String repeatOption, String reminderOption) {
-        this.name = name;
-        this.question = question;
-        this.repeatOption = repeatOption;
-        this.reminderOption = reminderOption;
-    }
+//    public Goal(String name, String question, String repeatOption, String reminderOption) {
+//        this.name = name;
+//        this.question = question;
+//        this.repeatOption = repeatOption;
+//        this.reminderOption = reminderOption;
+//    }
 
     public void setName(String name) {
         this.name = name;

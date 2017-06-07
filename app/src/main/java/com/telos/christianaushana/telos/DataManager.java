@@ -5,14 +5,19 @@ package com.telos.christianaushana.telos;
  */
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+
+import static android.content.ContentValues.TAG;
 
 public class DataManager {
   public static ArrayList<Goal> list = null;
@@ -22,8 +27,6 @@ public class DataManager {
     public GsonClass(ArrayList<Goal> list) {
       gList = list;
     }
-
-
   }
 
   public static void writeDataToFile(Context context) {
@@ -48,7 +51,10 @@ public class DataManager {
     BufferedReader bufferedReader = new BufferedReader(new FileReader(context.getFilesDir() + "/" + "file"));
     gsonClassObj = gson.fromJson(bufferedReader, GsonClass.class);
 
-    list = gsonClassObj.gList;
+    if(gsonClassObj.gList == null)
+      list = new ArrayList<Goal>();
+    else
+      list = gsonClassObj.gList;
 
     bufferedReader.close();
   }
