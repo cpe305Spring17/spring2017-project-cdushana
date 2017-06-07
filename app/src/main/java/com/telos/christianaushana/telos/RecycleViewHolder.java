@@ -20,8 +20,6 @@ public class RecycleViewHolder extends RecyclerView.ViewHolder {
 
   private TextView mTextView;
   public Goal goal;
-  private ImageView imageView;
-  String TAG = "RecycleViewHolder";
 
   public RecycleViewHolder(final View itemView) {
     super(itemView);
@@ -54,19 +52,7 @@ public class RecycleViewHolder extends RecyclerView.ViewHolder {
   public void bind(final Goal goal) {
     this.goal = goal;
     mTextView.setText(goal.getName());
-    Log.d(TAG, "bind: " + goal.getName() + " " + goal.getRepeatOption());
 //            int color = itemView.getContext().getResources().getColor(R.color.colorAccent);
 //            itemView.setBackgroundColor(entry.b ? color: 0x00000000);
-
-//    final CheckBox cb = (CheckBox) itemView.findViewById(R.id.checkBox);
-//    cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//      @Override
-//      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//        entry.b = isChecked;
-//      }
-//    });
-//    cb.setChecked(entry.b);
-
-//    Glide.with(imageView.getContext()).load(goal.i).into(imageView);
   }
 }

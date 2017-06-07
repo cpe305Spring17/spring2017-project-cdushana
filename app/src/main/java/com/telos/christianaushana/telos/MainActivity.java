@@ -1,13 +1,10 @@
 package com.telos.christianaushana.telos;
 
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -15,8 +12,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public AlertDialog diaBox;
     public static ArrayList<Goal> list;
     public static RecycleAdapter adapter;
-    public RecyclerView rv;
+    public static RecyclerView rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                RecycleViewHolder rvh = (RecycleViewHolder) viewHolder;
+//                RecycleViewHolder rvh = (RecycleViewHolder) viewHolder;
                 if (direction == ItemTouchHelper.RIGHT) {
                     int index = viewHolder.getAdapterPosition();
-                    AlertDialog diaBox = AskOption(adapter, index);
+                    AlertDialog diaBox = askOption(adapter, index);
                     diaBox.show();
                 }
 //                else if (direction == ItemTouchHelper.LEFT) {
@@ -78,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         };
 
         new ItemTouchHelper(simpleCallback).attachToRecyclerView(rv);
-
     }
 
     @Override
@@ -90,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.add_action:
                 // dialog box will display and provide areas to input data
-//                addGoal = new AddGoal();
                 diaBox = AddGoal.addGoal(MainActivity.this);
                 diaBox.show();
                 return true;
@@ -106,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private AlertDialog AskOption(final RecycleAdapter adapter, final int position)
+    private AlertDialog askOption(final RecycleAdapter adapter, final int position)
     {
         AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
                 //set message, title, and icon
@@ -132,9 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-
-                        dialog.dismiss();
-
+                    dialog.dismiss();
                     }
                 })
                 .create();

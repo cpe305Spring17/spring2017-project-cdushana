@@ -2,7 +2,6 @@ package com.telos.christianaushana.telos;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,14 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.telos.christianaushana.telos.notifications.SendNotification;
-
 /**
  * Created by christianaushana on 5/18/17.
  */
 
 public class DetailActivity extends AppCompatActivity {
-  private int position;
   int notificationID;
 
   @Override
@@ -29,17 +25,20 @@ public class DetailActivity extends AppCompatActivity {
     setContentView(R.layout.activity_details);
 
     Intent intent = getIntent();
-    position = intent.getIntExtra("DATA_POSITION_INTENT", 1);
+    int position = intent.getIntExtra("DATA_POSITION_INTENT", 1);
     final Goal goal = MainActivity.list.get(position);
 
     TextView tName = (TextView) findViewById(R.id.name);
     tName.setText(goal.getName());
+
     final TextView tQuestion = (TextView) findViewById(R.id.question);
     tQuestion.setText(goal.getQuestion());
+
     TextView tReminder = (TextView) findViewById(R.id.reminder);
-    tReminder.setText(goal.getReminderOption());
-    TextView tRepeat = (TextView) findViewById(R.id.repeat);
-    tRepeat.setText(goal.getRepeatOption());
+    tReminder.setText(goal.getReminderOption().getTime() + goal.getReminderOption().getMeridiem());
+
+//    TextView tRepeat = (TextView) findViewById(R.id.repeat);
+//    tRepeat.setText(goal.getRepeatOption());
 
     Button button = (Button) findViewById(R.id.button);
     button.setOnClickListener(new View.OnClickListener() {

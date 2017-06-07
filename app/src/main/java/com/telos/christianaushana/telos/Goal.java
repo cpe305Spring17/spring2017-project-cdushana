@@ -8,11 +8,11 @@ public class Goal {
     String name;
     String question;
     String repeatOption; // modify later
-    String reminderOption; // modify later
+    Reminder reminderOption; // modify later
 
     public Goal() {}
 
-    public Goal(String name, String question, String repeatOption, String reminderOption) {
+    public Goal(String name, String question, String repeatOption, Reminder reminderOption) {
         this.name = name;
         this.question = question;
         this.repeatOption = repeatOption;
@@ -43,11 +43,11 @@ public class Goal {
         return repeatOption;
     }
 
-    public void setReminderOption(String reminderOption) {
+    public void setReminderOption(Reminder reminderOption) {
         this.reminderOption = reminderOption;
     }
 
-    public String getReminderOption() {
+    public Reminder getReminderOption() {
         return reminderOption;
     }
 

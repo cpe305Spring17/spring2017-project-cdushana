@@ -10,8 +10,8 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ReminderTests {
-  Goal goal = new Goal("Run", "Did you run today?", "daily", "9AM");
   Reminder reminder = new Reminder(10, "AM");
+  Goal goal = new Goal("Run", "Did you run today?", "daily", reminder);
 
   @Test
   public void testGetReminderTime() throws Exception {

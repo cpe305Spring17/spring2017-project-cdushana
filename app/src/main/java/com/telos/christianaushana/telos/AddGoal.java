@@ -2,10 +2,11 @@ package com.telos.christianaushana.telos;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -13,18 +14,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 /**
  * Created by christianaushana on 5/2/17.
  */
 
 public class AddGoal extends AppCompatActivity {
-    ArrayList<String> repeatOptionList;
-    ArrayList<String> reminderOptionList;
+  private static Integer timeSelection;
+  private static String meridiemSelection;
+  ArrayList<String> repeatOptionList;
+  ArrayList<String> reminderOptionList;
   private static final String TAG = "AddGoal";
 
-    public static AlertDialog addGoal(final Activity context/*, final OptionListAdapter adapter*/) {
+    public static AlertDialog addGoal(final Activity context) {
       LinearLayout layout = new LinearLayout(context);
       layout.setOrientation(LinearLayout.VERTICAL);
 
@@ -70,7 +72,7 @@ public class AddGoal extends AppCompatActivity {
       reminderQuestion.setText("What time do you want to be reminded?");
       layout.addView(reminderQuestion);
 
-      ArrayList<Integer> timeOptionList = new ArrayList<Integer>();
+      ArrayList<Integer> timeOptionList = new ArrayList<>();
       timeOptionList.add(1);
       timeOptionList.add(2);
       timeOptionList.add(3);
@@ -84,19 +86,45 @@ public class AddGoal extends AppCompatActivity {
       timeOptionList.add(11);
       timeOptionList.add(12);
 
-      ArrayList<String> meridiemOptionList = new ArrayList<String>();
-      meridiemOptionList.add("AM");
-      meridiemOptionList.add("PM");
-
       final Spinner timeOptionSpinner = new Spinner(context);
-      ArrayAdapter<Integer> timeOptionAdapter = new ArrayAdapter<Integer>(context, android.R.layout.simple_spinner_item, timeOptionList);
+      ArrayAdapter<Integer> timeOptionAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, timeOptionList);
       timeOptionSpinner.setAdapter(timeOptionAdapter);
       layout.addView(timeOptionSpinner);
 
+      timeOptionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+          timeSelection = (Integer) parent.getItemAtPosition(position);
+          Log.d(TAG, "onItemSelected: " + timeSelection);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+          timeSelection = (Integer) parent.getItemAtPosition(0);
+        }
+      });
+
+      ArrayList<String> meridiemOptionList = new ArrayList<>();
+      meridiemOptionList.add("AM");
+      meridiemOptionList.add("PM");
+
       final Spinner meridiemOptionSpinner = new Spinner(context);
-      ArrayAdapter<String> meridiemOptionAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, meridiemOptionList);
+      ArrayAdapter<String> meridiemOptionAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, meridiemOptionList);
       meridiemOptionSpinner.setAdapter(meridiemOptionAdapter);
       layout.addView(meridiemOptionSpinner);
+
+      meridiemOptionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+          meridiemSelection = (String) parent.getItemAtPosition(position);
+          Log.d(TAG, "onItemSelected: " + meridiemSelection);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+          meridiemSelection = (String) parent.getItemAtPosition(0);
+        }
+      });
 
         // modify later
 //        final EditText reminderOption = new EditText(context);
@@ -117,12 +145,13 @@ public class AddGoal extends AppCompatActivity {
                         if (questionInput.getText().toString().length() > 0) {
                             goal.setQuestion(questionInput.getText().toString());
                         }
+
+                        goal.setReminderOption(new Reminder(timeSelection, meridiemSelection));
+
 //                        if (repeatOption.getText().toString().length() > 0) {
 //                            goal.setRepeatOption(repeatOption.getText().toString());
 //                        }
-//                        if (reminderOption.getText().toString().length() > 0) {
-//                            goal.setReminderOption(reminderOption.getText().toString());
-//                        }
+
                         //your deleting code
                         dialog.dismiss();
 
