@@ -20,39 +20,39 @@ This application was made using the Model-View-Controller Architecture Pattern. 
 ![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/ArchitectureDiagram.png)
 
 ## Class Diagram
--- INSERT PICTURE
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/Class%20Diagram2.png)
 
 ## Design Patterns
 This application uses Singleton Patterns from the Calendar class. Singleton is useful to quickly and easily recieve an instance of a class.
 
 ## Screenshots
 
--- HomePage
 After downloading Telos, you will be presented with an empty homepage.
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/HomePage.png)
 
 To add your first goal, tap on the plus button on the top right of the application.
--- add option
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/AddOption.png)
 
 Fill in all your desired input for your goal.
--- fill in data
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/FillInData.png)
 
 Congrats - you've succesfully added your first goal!
--- added run
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/AddedRun.png)
 
 This Toast feature is activated when the user gently taps on any of the goals on the home screen. This Toast notifies the user of more functionality needed to access information.
--- toast
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/Toast.png)
 
 Deleting a goal is easy, just swipe and confirm!
--- delete entry
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/RemoveItem.png)
 
 My long pressing on a particular goal, the user will be brought to this page. The checkbox will be unchecked until that goal has been fufilled for the day.
--- before completing goal
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/BeforeCompletingGoal.png)
 
 After completing the goal, the checkbox can be checked. 
--- checked goal
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/CheckedGoal.png)
 
 You will recieved daily notifications for each goal that you create based on the time you have set. In this particular demo, I have the notification time set to the time the goal that was created. This will be changed in a later release.
--- notification
+![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/Notification.png)
 
 ## Key Takeaways
 - Managing time is essential for completion of this project
