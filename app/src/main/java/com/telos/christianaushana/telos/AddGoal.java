@@ -22,9 +22,6 @@ import java.util.ArrayList;
 public class AddGoal extends AppCompatActivity {
   private static Integer timeSelection;
   private static String meridiemSelection;
-  ArrayList<String> repeatOptionList;
-  ArrayList<String> reminderOptionList;
-  private static final String TAG = "AddGoal";
 
     public static AlertDialog addGoal(final Activity context) {
       LinearLayout layout = new LinearLayout(context);
@@ -65,7 +62,6 @@ public class AddGoal extends AppCompatActivity {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
           timeSelection = (Integer) parent.getItemAtPosition(position);
-          Log.d(TAG, "onItemSelected: " + timeSelection);
         }
 
         @Override
@@ -87,7 +83,6 @@ public class AddGoal extends AppCompatActivity {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
           meridiemSelection = (String) parent.getItemAtPosition(position);
-          Log.d(TAG, "onItemSelected: " + meridiemSelection);
         }
 
         @Override
