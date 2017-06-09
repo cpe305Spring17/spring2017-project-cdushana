@@ -8,16 +8,16 @@ This application is focused on building customizable goals throughout a personâ€
 On your android device, simply search for Telos on the Google Play Store and download it.
   		  
 ## Implemented Features
--- Ability to create and delete goals
--- Customizable input for goals
--- Multiple different activities/view for application
--- Confirmation of completed goal
--- Daily Notifications for all created goals
+- Ability to create and delete goals
+- Customizable input for goals
+- Multiple different activities/view for application
+- Confirmation of completed goal
+- Daily Notifications for all created goals
 
 ## Architecture Diagram
 This application was made using the Model-View-Controller Architecture Pattern. Telos saves your data to the local storage on your Android device.
 
--- INSERT PICTURE
+- INSERT PICTURE
 
 ## Class Diagram
 -- INSERT PICTURE
@@ -55,7 +55,7 @@ You will recieved daily notifications for each goal that you create based on the
 -- notification
 
 ## Key Takeaways
--- Managing time is essential for completion of this project
--- Start using design patterns earlier on, rather than at the end...
--- Continuous Integration is essential for testing purposes!
--- Sonarqube is beneficial for understanding how to clean up code
+- Managing time is essential for completion of this project
+- Start using design patterns earlier on, rather than at the end...
+- Continuous Integration is essential for testing purposes!
+- Sonarqube is beneficial for understanding how to clean up code
