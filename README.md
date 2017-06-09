@@ -17,7 +17,7 @@ On your android device, simply search for Telos on the Google Play Store and dow
 ## Architecture Diagram
 This application was made using the Model-View-Controller Architecture Pattern. Telos saves your data to the local storage on your Android device.
 
-- INSERT PICTURE
+![Architecture Diagram][spring2017-project-cdushana/docs/ArchitectureDiagram.png]
 
 ## Class Diagram
 -- INSERT PICTURE
