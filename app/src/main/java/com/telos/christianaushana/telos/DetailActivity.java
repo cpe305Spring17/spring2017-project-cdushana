@@ -52,9 +52,8 @@ public class DetailActivity extends AppCompatActivity {
 
     // show yesterday's data
     if (checkBox.isChecked()) {
-
+      // change color of box?
     }
-
 
     // send notification
     Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);

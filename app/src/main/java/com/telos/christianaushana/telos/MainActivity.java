@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         assert rv != null;
 
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rv.setHasFixedSize(true);
 
         if (list == null) {
             try {

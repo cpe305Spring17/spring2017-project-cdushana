@@ -2,6 +2,7 @@ package com.telos.christianaushana.telos;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -20,10 +21,12 @@ public class RecycleViewHolder extends RecyclerView.ViewHolder {
 
   private TextView mTextView;
   public Goal goal;
+  CardView cardView;
 
   public RecycleViewHolder(final View itemView) {
     super(itemView);
     mTextView = (TextView) itemView.findViewById(R.id.textView);
+    cardView = (CardView) itemView.findViewById(R.id.cv);
 
     // opens to detailed view of goal
     itemView.setOnLongClickListener(new View.OnLongClickListener() {

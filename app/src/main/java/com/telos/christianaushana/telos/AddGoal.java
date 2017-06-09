@@ -38,36 +38,6 @@ public class AddGoal extends AppCompatActivity {
       questionInput.setHint("Create question (Did you workout today?)");
       layout.addView(questionInput);
 
-        // modify later
-//        final EditText repeatOption = new EditText(context);
-//        repeatOption.setHint("repeat");
-//        layout.addView(repeatOption);
-//        ArrayList<String> repeatOptionList = new ArrayList<String>();
-//        repeatOptionList.add()
-
-//      ArrayList<String> repeatOptionList = new ArrayList<String>();
-//      repeatOptionList.add("daily");
-//      repeatOptionList.add("weekly");
-//
-//      ArrayList<String> repeatOptionDayList = new ArrayList<String>();
-//      repeatOptionDayList.add("monday");
-//      repeatOptionDayList.add("tuesday");
-//      repeatOptionDayList.add("wednesday");
-//      repeatOptionDayList.add("thursday");
-//      repeatOptionDayList.add("friday");
-//      repeatOptionDayList.add("saturday");
-//      repeatOptionDayList.add("sunday");
-//
-//      final Spinner repeatOptionSpinner = new Spinner(context);
-//      ArrayAdapter<String> repeatOptionAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, repeatOptionList);
-//      repeatOptionSpinner.setAdapter(repeatOptionAdapter);
-//      layout.addView(repeatOptionSpinner);
-//
-//      final Spinner repeatOptionDaySpinner = new Spinner(context);
-//      ArrayAdapter<String> repeatOptionDayAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, repeatOptionDayList);
-//      repeatOptionDaySpinner.setAdapter(repeatOptionDayAdapter);
-//      layout.addView(repeatOptionDaySpinner);
-
       TextView reminderQuestion = new TextView(context);
       reminderQuestion.setText("What time do you want to be reminded?");
       layout.addView(reminderQuestion);
@@ -126,10 +96,6 @@ public class AddGoal extends AppCompatActivity {
         }
       });
 
-        // modify later
-//        final EditText reminderOption = new EditText(context);
-//        reminderOption.setHint("reminder");
-//        layout.addView(reminderOption);
 
         AlertDialog alertDialog = new AlertDialog.Builder(context)
                 //set message, title, and icon
@@ -147,10 +113,6 @@ public class AddGoal extends AppCompatActivity {
                         }
 
                         goal.setReminderOption(new Reminder(timeSelection, meridiemSelection));
-
-//                        if (repeatOption.getText().toString().length() > 0) {
-//                            goal.setRepeatOption(repeatOption.getText().toString());
-//                        }
 
                         //your deleting code
                         dialog.dismiss();
