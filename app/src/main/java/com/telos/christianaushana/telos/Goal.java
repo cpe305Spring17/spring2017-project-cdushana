@@ -11,8 +11,7 @@ import java.util.Date;
 public class Goal {
   String name;
   String question;
-  String repeatOption; // modify later
-  Reminder reminderOption; // modify later
+  Reminder reminderOption;
   Boolean status = false;
 
   public Goal() {}
@@ -20,7 +19,6 @@ public class Goal {
   public Goal(String name, String question, String repeatOption, Reminder reminderOption, Boolean status) {
     this.name = name;
     this.question = question;
-    this.repeatOption = repeatOption;
     this.reminderOption = reminderOption;
     this.status = status;
   }
@@ -39,14 +37,6 @@ public class Goal {
 
   public String getQuestion() {
       return question;
-  }
-
-  public void setRepeatOption(String repeatOption) {
-      this.repeatOption = repeatOption;
-  }
-
-  public String getRepeatOption() {
-      return repeatOption;
   }
 
   public void setReminderOption(Reminder reminderOption) {
