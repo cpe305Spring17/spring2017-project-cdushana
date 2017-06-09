@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  */
 public class ReminderTests {
   Reminder reminder = new Reminder(10, "AM");
-  Goal goal = new Goal("Run", "Did you run today?", "daily", reminder, true);
+  Goal goal = new Goal("Run", "Did you run today?", reminder, true);
 
   @Test
   public void testGetReminderTime() throws Exception {
