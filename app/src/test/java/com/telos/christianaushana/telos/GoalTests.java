@@ -41,6 +41,14 @@ public class GoalTests {
   }
 
   @Test
+  public void testSetGoalQuestion() throws Exception {
+    Reminder reminder = new Reminder(1, "AM");
+    Goal goal = new Goal("Run", "Did you run today?", reminder, false);
+    goal.setQuestion("Did you actually run today?");
+    assertEquals(goal.getQuestion(), "Did you actually run today?");
+  }
+
+  @Test
   public void testGoalReminderOption() throws Exception {
     Reminder reminder = new Reminder(1, "AM");
     Goal goal = new Goal("Run", "Did you run today?", reminder, false);
@@ -48,11 +56,28 @@ public class GoalTests {
     assertEquals(goal.getReminderOption().getMeridiem(), "AM");
   }
 
+  @Test
+  public void testSetGoalReminderOption() throws Exception {
+    Reminder reminder = new Reminder(1, "AM");
+    Goal goal = new Goal("Run", "Did you run today?", reminder, false);
+    reminder.setTime(6);
+    reminder.setMeridiem("PM");
+    assertEquals(goal.getReminderOption().getTime(), 6);
+    assertEquals(goal.getReminderOption().getMeridiem(), "PM");
+  }
 
   @Test
   public void testGoalCompleted() throws Exception {
     Reminder reminder = new Reminder(1, "AM");
     Goal goal = new Goal("Run", "Did you run today?", reminder, false);
     assertEquals(goal.getStatus(), false);
+  }
+
+  @Test
+  public void testSetGoalCompleted() throws Exception {
+    Reminder reminder = new Reminder(1, "AM");
+    Goal goal = new Goal("Run", "Did you run today?", reminder, false);
+    goal.setStatus(true);
+    assertEquals(goal.getStatus(), true);
   }
 }

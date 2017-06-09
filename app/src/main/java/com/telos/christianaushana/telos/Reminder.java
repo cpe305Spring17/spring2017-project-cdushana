@@ -28,7 +28,6 @@ public class Reminder {
         if (time >= 1 && time <= 12) {
             this.time = time;
         }
-        this.time = time;
     }
 
     public void setMeridiem(String meridiem) {
