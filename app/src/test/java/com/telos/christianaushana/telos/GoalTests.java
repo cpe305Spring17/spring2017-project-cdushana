@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  */
 public class GoalTests {
     Reminder reminder = new Reminder(1, "AM");
-    Goal goal = new Goal("Run", "Did you run today?", "daily", reminder);
+    Goal goal = new Goal("Run", "Did you run today?", "daily", reminder, false);
 
 
     @Test
@@ -38,5 +38,10 @@ public class GoalTests {
     @Test
     public void testGoalRepeatOption() throws Exception {
         assertEquals(goal.getRepeatOption(), "daily");
+    }
+
+    @Test
+    public void testGoalCompleted() throws Exception {
+        assertEquals(goal.getStatus(), false);
     }
 }

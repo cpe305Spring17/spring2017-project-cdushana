@@ -105,8 +105,8 @@ public class AddGoal extends AppCompatActivity {
       });
 
       ArrayList<String> meridiemOptionList = new ArrayList<>();
-      meridiemOptionList.add("AM");
       meridiemOptionList.add("PM");
+      meridiemOptionList.add("AM");
 
       final Spinner meridiemOptionSpinner = new Spinner(context);
       ArrayAdapter<String> meridiemOptionAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, meridiemOptionList);

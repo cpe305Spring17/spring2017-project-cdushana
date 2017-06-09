@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     public AlertDialog diaBox;
-    public static ArrayList<Goal> list;
-    public static RecycleAdapter adapter;
-    public static RecyclerView rv;
+    public static ArrayList<Goal> list = null;
+    public static RecycleAdapter adapter = null;
+    public static RecyclerView rv = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,13 +142,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        DataManager.writeDataToFile(this);
+        try {
+            DataManager.writeDataToFile(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        DataManager.writeDataToFile(this);
+        try {
+            DataManager.writeDataToFile(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

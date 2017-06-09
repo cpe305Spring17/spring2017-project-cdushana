@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
-import android.view.View;
-import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by christianaushana on 5/18/17.
@@ -24,41 +27,51 @@ public class DetailActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_details);
 
+    // retrieves data from MainActivity
     Intent intent = getIntent();
     int position = intent.getIntExtra("DATA_POSITION_INTENT", 1);
     final Goal goal = MainActivity.list.get(position);
 
+    // displays details on DetailsActivity
     TextView tName = (TextView) findViewById(R.id.name);
     tName.setText(goal.getName());
 
+    // displays details on DetailsActivity
     final TextView tQuestion = (TextView) findViewById(R.id.question);
     tQuestion.setText(goal.getQuestion());
 
-    TextView tReminder = (TextView) findViewById(R.id.reminder);
-    tReminder.setText(goal.getReminderOption().getTime() + goal.getReminderOption().getMeridiem());
-
-//    TextView tRepeat = (TextView) findViewById(R.id.repeat);
-//    tRepeat.setText(goal.getRepeatOption());
-
-    Button button = (Button) findViewById(R.id.button);
-    button.setOnClickListener(new View.OnClickListener() {
+    // checkbox confirms that goal has been completed
+    CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
+    checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
       @Override
-      public void onClick(View v) {
-        Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(),
-                0, notificationIntent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
-
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext());
-        mBuilder.setSmallIcon(R.drawable.ic_menu_add)
-                .setContentTitle("Telos")
-                .setContentText(goal.getQuestion())
-                .setContentIntent(contentIntent);
-//                .setWhen();
-
-        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(notificationID, mBuilder.build());
+      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        goal.setStatus(isChecked);
       }
     });
+    checkBox.setChecked(goal.getStatus());
+
+    // show yesterday's data
+    if (checkBox.isChecked()) {
+
+    }
+
+
+    // send notification
+    Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);
+    PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(),
+            0, notificationIntent,
+            PendingIntent.FLAG_CANCEL_CURRENT);
+
+    NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext());
+    mBuilder.setSmallIcon(R.drawable.ic_menu_add)
+            .setContentTitle("Telos")
+            .setContentText(goal.getQuestion())
+            .setContentIntent(contentIntent)
+            .setWhen(System.currentTimeMillis());
+
+    NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+    mNotificationManager.notify(notificationID, mBuilder.build());
   }
+
+
 }

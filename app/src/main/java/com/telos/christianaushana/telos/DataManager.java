@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class DataManager {
-  public static ArrayList<Goal> list = null;
+  protected static ArrayList<Goal> list = null;
 
   private static class GsonClass {
     ArrayList<Goal> gList = new ArrayList<>();
@@ -24,18 +24,22 @@ public class DataManager {
     }
   }
 
-  public static void writeDataToFile(Context context) {
+  public static void writeDataToFile(Context context) throws IOException {
     GsonClass gsonClassObj = new GsonClass(list);
     Gson gson = new Gson();
+    FileWriter fileWriter = null;
 
     String json = gson.toJson(gsonClassObj);
     try {
-      FileWriter fileWriter = new FileWriter(context.getFilesDir() + "/" + "file");
+      fileWriter = new FileWriter(context.getFilesDir() + "/" + "file");
       fileWriter.write(json);
       fileWriter.flush();
       fileWriter.close();
     } catch (IOException e) {
       e.printStackTrace();
+    }
+    finally {
+      fileWriter.close();
     }
   }
 
