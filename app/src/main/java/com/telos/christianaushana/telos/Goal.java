@@ -16,7 +16,7 @@ public class Goal {
 
   public Goal() {}
 
-  public Goal(String name, String question, String repeatOption, Reminder reminderOption, Boolean status) {
+  public Goal(String name, String question, Reminder reminderOption, Boolean status) {
     this.name = name;
     this.question = question;
     this.reminderOption = reminderOption;
