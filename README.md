@@ -40,7 +40,7 @@ Congrats - you've succesfully added your first goal!
 ![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/AddedRun.png)
 
 This Toast feature is activated when the user gently taps on any of the goals on the home screen. This Toast notifies the user of more functionality needed to access information.
-![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/Toast.png)
+![alt text](https://user-images.githubusercontent.com/14967281/26964740-cb2c5e0e-4ca7-11e7-90ff-5ba5cff97de8.png)
 
 Deleting a goal is easy, just swipe and confirm!
 ![alt text](https://github.com/cpe305Spring17/spring2017-project-cdushana/blob/gh-pages/docs/RemoveItem.png)
