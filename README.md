@@ -23,7 +23,8 @@ This application was made using the Model-View-Controller Architecture Pattern. 
 ![alt text](https://user-images.githubusercontent.com/14967281/26964893-54bb53d2-4ca8-11e7-8e14-1ae50aec1e10.png)
 
 ## Design Patterns
-This application uses Singleton Patterns from the Calendar class. Singleton is useful to quickly and easily recieve an instance of a class.
+- Single Pattern: used to retrive Calendar instances. Singleton is useful to quickly and easily recieve an instance of a class.
+- Adapter Pattern: RecyclerView/RecycleAdapter for list of goals on main activity. 
 
 ## Screenshots
 
