@@ -8,19 +8,21 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"/>
+        android:layout_gravity="center"
+        android:textSize="35dp"/>
 
     <TextView
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:textSize="25dp"/>
 
-    <TextView
-        android:id="@+id/reminder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"/>
+    <!--<TextView-->
+        <!--android:id="@+id/reminder"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="25dp"/>-->
 
     <TextView
         android:id="@+id/repeat"
